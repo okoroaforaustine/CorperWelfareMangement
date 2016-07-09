@@ -501,6 +501,13 @@
     <Content Include="bower_components\tg-angular-validator\dist\angular-validator.js" />
     <Content Include="bower_components\tg-angular-validator\dist\angular-validator.min.js" />
     <Content Include="bower_components\tg-angular-validator\Gruntfile.js" />
+    <Content Include="CorpersWelfareManager.Tests\app.config" />
+    <Content Include="CorpersWelfareManager.Tests\CorpersWelfareManager.Tests.csproj" />
+    <Content Include="CorpersWelfareManager.Tests\obj\Debug\build.force" />
+    <Content Include="CorpersWelfareManager.Tests\obj\Debug\CorpersWelfareManager.Tests.csproj.FileListAbsolute.txt" />
+    <Content Include="CorpersWelfareManager.Tests\obj\Debug\CorpersWelfareManager.Tests.csprojResolveAssemblyReference.cache" />
+    <Content Include="CorpersWelfareManager.Tests\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="CorpersWelfareManager.Tests\packages.config" />
     <Content Include="file.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gulpfile.js" />
@@ -793,6 +800,11 @@
     <Compile Include="Controllers\CorpersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MonthlyDuesController.cs" />
+    <Compile Include="CorpersWelfareManager.Tests\CorperRepoTest.cs" />
+    <Compile Include="CorpersWelfareManager.Tests\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="CorpersWelfareManager.Tests\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="CorpersWelfareManager.Tests\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="CorpersWelfareManager.Tests\Properties\AssemblyInfo.cs" />
     <Compile Include="Global.asax.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Migrations\201606291304305_Monthly.cs" />
@@ -846,6 +858,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CorpersWelfareManager.Tests\bin\Debug\" />
+    <Folder Include="CorpersWelfareManager.Tests\bin\Release\" />
+    <Folder Include="CorpersWelfareManager.Tests\obj\Debug\TempPE\" />
     <Folder Include="ng-Test\Services\" />
   </ItemGroup>
   <ItemGroup>
