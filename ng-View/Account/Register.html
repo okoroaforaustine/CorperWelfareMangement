@@ -1,0 +1,55 @@
+﻿
+<div class="container" style="margin-top:30px">
+
+    <div class="col-md-9">
+        <div class="modal-dialog" style="margin-bottom:0">
+            <div class="modal-content">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Register</h3>
+                </div>
+                <div class="panel-body">
+                    <form name="register" novalidate>
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Charly" name="UserName"  data-ng-model="registration.userName" required>
+                                <span style="color:red" ng-show="register.registration.userName.$dirty && register.registration.userName.$invalid">
+                                    <span ng-show="register.registration.userName.$error.required">Username is required.</span>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password"  type="password" data-ng-model="registration.password" required="">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Confirm Password"  type="password" data-ng-model="registration.confirmPassword" required="">
+                               
+                            </div>
+
+                            <button type="submit" class="btn btn-sm btn-warning" data-ng-click="Cancel()" >Cancel</button>
+                            <button type="submit" class="btn btn-sm btn-success" data-ng-click="signUp()" ng-disabled="register.$pristine">Register</button>
+                        </fieldset>
+                        <div data-ng-hide="message == ''" data-ng-class=" outmessage ? 'alert alert-success' : 'alert alert-danger'">
+                            {{message}}
+                        </div>
+                       
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+

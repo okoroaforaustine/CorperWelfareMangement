@@ -1,0 +1,100 @@
+﻿
+<div class="Container">
+
+    <div class="col-md-offset-1">
+        <table class="table table-bodered">
+          <tr>
+              <td><label class="col-sm-2 control-label">Search by stateCode:</label></td>
+
+              <td>
+              <select class=form-control ng-model="SelectedCriteria" ng-options="S for S in Selectors"></select></td>
+
+             
+              <td><label class="col-sm-2 control-label">Enter Search Value:</label></td>
+              <td>
+                  <input type="text" ng-model="filterValue" class="form-control" ng-change="getFilterData()" />
+              </td>
+          </tr>
+            <tr>
+                <td>Search by community:</td>
+
+                <td>
+                    <select ng-model="SelectedCriteria" ng-options="S for S in Selectors"></select>
+                </td>
+
+
+                <td>Enter Search Value:</td>
+                <td>
+                    <input type="text" ng-model="filterValue" class="form-control" ng-change="getFilterData()" />
+                </td>
+            </tr>
+
+
+        </table>
+   
+
+
+ 
+<div class=" panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Corpers</div>
+        <div class="panel-body">
+        </div>
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th>CorperID</th>
+                <th>StateCode</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Community</th>
+                
+            </tr>
+
+
+            <tr ng-repeat="Corper in Corpers">
+
+                <td>
+                    {{Corper.CorperID}}
+                </td>
+                <td>
+                    {{ Corper.Statecode }}
+                </td>
+                <td>
+                    {{ Corper.Firstname}}
+                </td>
+
+                <td>
+                    {{Corper.Lastname}}
+                </td>
+                <td>
+
+                    {{Corper.Community}}
+                </td>
+                <td>
+                    
+                </td>
+                <td><button type="button" class="btn btn-primary" ng-click="GetCorper()">Edit</button>
+                <td>
+                    <button type="button" class="btn btn-danger" ng-click="DeleteCorper()">Delete</button>
+
+
+                </td>
+
+
+
+
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+</div>

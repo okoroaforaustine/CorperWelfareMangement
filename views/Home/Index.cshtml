@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="header">
+    <div class="posterhead">
+
+        Corperwelfare
+    </div>
+
+   
+
+
+
+
+
+    <div data-ng-controller="indexController">
+
+
+
+        <ul>
+
+
+
+
+
+
+
+            <li><a href="#/Index/Home">HOME</a></li>
+            <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+            <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+            <li data-ng-hide="authentication.isAuth"> <a href="#/Login">LOGIN</a></li>
+            <li data-ng-hide="authentication.isAuth"> <a href="#/Home/Register">REGISTER</a></li>
+        </ul>
+
+
+
+        </div>
+
+
+    <div data-ng-controller="indexController">
+        <div class="col-md-5">
+            <div data-ng-hide="!authentication.isAuth">
+                <dash-board />
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+   
+<ng-view></ng-view>
