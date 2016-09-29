@@ -1,0 +1,49 @@
+﻿
+<div class="col-lg-offset-3">
+    <div class="container">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <i class="glyphicon glyphicon-wrench pull-right"></i>
+                        <h4>Create Nysc Year</h4>
+                    </div>
+                </div>
+
+                <form class="form-horizontal">
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" for="formGroupInputLarge">Nysc Year</label>
+                        <div class="col-xs-4">
+                            <input class="form-control" type="text" placeholder="Enviromental" data-ng-model="NyscYear.NyscYearName">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-ng-click="PostNyscYear()">Create NyscYear</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-sm-offset-2 col-sm-10">
+
+                                <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+
+                                    {{message}}
+
+
+                                </div>
+
+
+
+
+
+
+
+
+                            </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

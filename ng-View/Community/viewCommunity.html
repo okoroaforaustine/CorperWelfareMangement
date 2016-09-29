@@ -1,0 +1,65 @@
+﻿<div class="col-lg-offset-3">
+    <div class="container">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Community</div>
+            <div class="panel-body">
+
+
+
+
+
+
+
+
+
+
+
+                <div class=" panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Community</div>
+                    <div class="panel-body">
+                    </div>
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th>Community Name</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+
+
+                        <tr ng-repeat="Community in Community">
+
+                            <td>
+                                {{Community.CommunityName}}
+                            </td>
+
+
+                            <td><button type="button" class="btn btn-primary" ng-click="GetCorper()">Edit</button></td>
+                            <td>
+                                <button type="button" class="btn btn-danger" ng-click="DeleteCorper()">Delete</button>
+
+
+                            </td>
+
+
+
+
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
