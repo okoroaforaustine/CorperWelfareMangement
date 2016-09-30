@@ -35,7 +35,7 @@ namespace CorpersWelfareManager.Models
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
+            Database.SetInitializer<WelfareManagerContext>(new CreateDatabaseIfNotExists<WelfareManagerContext>());
             
             modelBuilder.Entity<MonthlyDues>().HasRequired(x => x.Corper).WithMany(x => x.MonthlyDues);
            
