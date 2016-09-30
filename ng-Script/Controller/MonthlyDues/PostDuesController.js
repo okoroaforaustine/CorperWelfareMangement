@@ -21,10 +21,10 @@
     $scope.monthly = function () {
         PostMonthly.PostDues($scope.MonthlyDues).then(function (response) {
             
-            $scope.message="Post Succesfully"
+            $scope.message = "Payment Succesfully";
 
-        }, function (error) {
-            $scope.error = error.response;
+        }, function (response) {
+            $scope.error = response.data;
 
         });
     }

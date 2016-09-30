@@ -21,8 +21,14 @@ namespace CorpersWelfareManager.Models
         public DbSet<Allocation> Allocation { get; set; }
         public DbSet<Corper> Corper { get; set; }
         public DbSet<MonthlyDues> MonthlyDues { get; set; }
+        public DbSet<Cds> Cds { get; set; }
+        public DbSet<Community> Community { get; set; }
+        public DbSet<NyscYear> NyscYear { get; set; }
+
+        public DbSet<Batch> Batch { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -32,7 +38,7 @@ namespace CorpersWelfareManager.Models
 
             
             modelBuilder.Entity<MonthlyDues>().HasRequired(x => x.Corper).WithMany(x => x.MonthlyDues);
-
+           
             
 
 

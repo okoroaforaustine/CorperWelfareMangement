@@ -11,16 +11,16 @@
                     <form name="register" novalidate>
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Charly" name="UserName"  data-ng-model="registration.userName" required>
+                                <input type="text" placeholder="Charly" name="UserName"  data-ng-model="registration.userName" required>
                                 <span style="color:red" ng-show="register.registration.userName.$dirty && register.registration.userName.$invalid">
                                     <span ng-show="register.registration.userName.$error.required">Username is required.</span>
                                 </span>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password"  type="password" data-ng-model="registration.password" required="">
+                                <input  placeholder="Password"  type="password" data-ng-model="registration.password" required="">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Confirm Password"  type="password" data-ng-model="registration.confirmPassword" required="">
+                                <input  placeholder="Confirm Password"  type="password" data-ng-model="registration.confirmPassword" required="">
                                
                             </div>
 

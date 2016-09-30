@@ -20,13 +20,13 @@ namespace CorpersWelfareManager.Controllers
      [RoutePrefix("api/Corpers")]
     public class CorpersController : ApiController
     {
-         private CorperRepository _Repo = null;
+      public IcorperInterface _Repo;
 
       
 
-       public CorpersController()
+       public CorpersController(IcorperInterface Repo)
        {
-           this._Repo = new CorperRepository();
+           _Repo = Repo;
 
 
        }
@@ -36,26 +36,36 @@ namespace CorpersWelfareManager.Controllers
       
         // POST: api/Corpers
 
-      [Authorize]
+       [Authorize]
        [Route("Post")]
        public IHttpActionResult Post(Corper corper)
        {
            if (ModelState.IsValid)
-           
-
-
-
+           {
                if (_Repo.AddCorper(corper))
                {
-
                    _Repo.Save();
                    return Ok(corper);
+
+               }
+               else
+               {
+
+                   return BadRequest("Corper Already Exist");
                }
 
-
-               return BadRequest("Statecode Already exist or fill in the required Data");
            }
-       
+           else
+           {
+
+               return BadRequest("failed to Save Corper");
+           }
+
+
+
+
+
+       }
 
 
 
@@ -107,17 +117,11 @@ namespace CorpersWelfareManager.Controllers
             var totalPages = Math.Ceiling((double)totalCount / pageSize);
             var CorperQuery = this._Repo.GetAllCorper();
 
-            if (QueryHelper.PropertyExists<Corper>(orderBy))
-            {
-                var orderByExpression = QueryHelper.GetPropertyExpression<Corper>(orderBy);
-                CorperQuery = CorperQuery.OrderBy(orderByExpression);
-            }
-            else
-            {
-                CorperQuery = CorperQuery.OrderBy(c => c.CorperID);
-            }
+            
+             CorperQuery = CorperQuery.OrderBy(c => c.CorperID);
+            
 
-            var Corper = CorperQuery.Skip((pageNumber - 1) * pageSize)
+            var Pagination = CorperQuery.Skip((pageNumber - 1) * pageSize)
                                     .Take(pageSize)
                                     .ToList();
 
@@ -125,7 +129,7 @@ namespace CorpersWelfareManager.Controllers
             {
                 TotalCount = totalCount,
                 totalPages = totalPages,
-                Corper = Corper
+                Corper = Pagination
             };
 
             return Ok(result);

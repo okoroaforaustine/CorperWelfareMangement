@@ -11,6 +11,7 @@ using Moq.Properties;
 using Moq.Proxy;
 using CorpersWelfareManager.Models.Repository;
 using CorpersWelfareManager.Models;
+using System.Data.Entity;
 
 namespace CorpersWelfareManager.Tests
 {
@@ -19,63 +20,76 @@ namespace CorpersWelfareManager.Tests
     public class CorperRepoTest
     {
 
-      
+        
+       
 
-        [TestMethod]
-        public void Return_All_Corpers()
-        {
-            IList<Corper> Corpers = new List<Corper>
-                {
-                    new Corper { CorperID = 1, Statecode ="rv/15A/1581",Firstname="Leo",Lastname="okeke",CommunityID=1,MonthlyID=1  }
-                };
-
-
-            //arrange
-            Mock<IcorperRepository> AllCorpRepo = new Mock<IcorperRepository>();
-            AllCorpRepo.Setup(x => x.GetAllCorper()).Returns(Corpers);
-
-            var Rep = AllCorpRepo.Object;
-
-            //act
-            var Result =Rep.GetAllCorper() as IList<Corper>;
-
-            //Assert
-
-            Assert.AreEqual(1,Result.Count);
-
-            
-
-
-        }
+       
         [TestMethod]
         public void Find_A_Corper_Byid()
         {
-            //Assert
-            Mock<IcorperRepository> AllCorpRepo = new Mock<IcorperRepository>();
-            AllCorpRepo.Setup(x => x.FindCorperbyID(It.IsAny<int>())).Returns(new Corper { CorperID=1});
+         
 
+          
+            //arrange
+            int ExpectedCorpID = 2;
+            var Corps = new CorperRepository();
+         
+            //Act
+            Corper result =Corps.FindCorperbyID(ExpectedCorpID);
+            
 
-
-
-
-            var Rep=AllCorpRepo.Object;
-            //act
-            var Result = Rep.FindCorperbyID(1);
-
+          
             //assert
-            Assert.AreEqual(1, Result.CorperID);
+            Assert.AreEqual(2, result.CorperID);
 
 
 
         }
         
+        [TestMethod]
+        public void AddCorper()
+        {
+            //arrange
+            Corper form = new Corper { CorperID = 1, Statecode = "rv/15A/1581", Firstname = "Leo", Lastname = "okeke", Sex = "male", Batch = "C", NyscYear = "2015", Cds = "Anti-Corruption", Community = "okobo" };
+            Corper Db = new Corper{CorperID = 1, Statecode ="rv/15A/1581",Firstname="Leo",Lastname="okeke",Sex="male",Batch="C",NyscYear="2015",Cds="Anti-Corruption",Community="okobo" };
+         
+            var CorpRepo = new CorperRepository();
+            //act
+          
+           var Result = CorpRepo.AddCorper(form);
+           
+            //assert
+ 
+           Assert.AreEqual(Db.Statecode,"rv/15A/1581");
+
+          
+
+
+
+        }
+
+        [TestMethod]
+
+        public void Check_if_Corper_exist()
+        {
+            //arrange
+            Corper Db = new Corper { CorperID = 1, Statecode = "rv/15A/1581", Firstname = "Leo", Lastname = "okeke", Sex = "male", Batch = "C", NyscYear = "2015", Cds = "Anti-Corruption", Community = "okobo" };
+            Corper corper = new Corper { CorperID = 1, Statecode = "rv/15A/1581", Firstname = "Leo", Lastname = "okeke", Sex = "male", Batch = "C", NyscYear = "2015", Cds = "Anti-Corruption", Community = "okobo" };
+
+               var CorperRepo=new CorperRepository();
+              //act
+            var Result=CorperRepo.CorperExist(corper);
+            
+            //assert
+            Assert.AreEqual(true,Result);
+            
 
         
 
 
 
 
-
+        }
 
 
 

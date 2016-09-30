@@ -7,6 +7,16 @@ App.controller('CorperController', ['$http', 'Addcorpers', '$scope', '$location'
     $scope.savedSuccessfully = false;
     $scope.message = "";
 
+
+
+
+
+
+
+
+    
+ 
+   
     $scope.Corper = {
         
         Statecode: "",
@@ -14,43 +24,123 @@ App.controller('CorperController', ['$http', 'Addcorpers', '$scope', '$location'
         Lastname: "",
         Community: "",
         MonthlyID: "",
+        BatchName: "",
+        NyscYearName: "",
+        Cds: "",
+        CommunityName:""
 
 
 
 
     }
     
+    
+
 
     $scope.Selectors = ["Statecode", "SalesAgentName", "MobileNo"];
     $scope.SelectedCriteria = ""; //The Object used for selecting value from <option>
     $scope.filterValue = "";
     $scope.AbuahCommunity =
          ["Okoboh", "odelga", "Omelima", "ogonokom"]
+    
+
+
+    function getCd() {
+        Addcorpers.getCds().then(function (result) {
+
+            $scope.AllCds = result.data;
+            console.log(result.data);
+
+        }, function (result) {
+            return result.reponse;
+
+        })
+
+
+    };
+
+    getCd();
+    function getCommunitys() {
+        Addcorpers.getCommunity().then(function (result) {
+
+            $scope.AllCommunity = result.data;
+            console.log(result.data);
+
+        }, function (result) {
+            return result.reponse;
+
+        })
+
+
+    };
+
+    getCommunitys();
+
+    function getBatchs() {
+        Addcorpers.getBatch().then(function (result) {
+
+            $scope.AllBatch = result.data;
+            console.log(result.data);
+
+        }, function (result) {
+            return result.reponse;
+
+        })
+
+
+    };
+
+    getBatchs();
+    function getNyscYears() {
+        Addcorpers.getNyscYear().then(function (result) {
+
+            $scope.AllNyscYear = result.data;
+            console.log(result.data);
+
+        }, function (result) {
+            return result.reponse;
+
+        })
+
+
+    };
+
+    getNyscYears();
 
 
 
-   
 
     $scope.SaveCorper = function () {
 
-        Addcorpers.AddCorper($scope.Corper).then(function (response) {
-            $scope.savedSuccessfully = true;
-     
-            $scope.message = "Corper Added successfully";
+        Addcorpers.AddCorper($scope.Corper).then(function (response,Corper) {
+
+            
+                $scope.savedSuccessfully = true;
 
 
-        }, function (error) {
-            $scope.error = error.response;
+                $scope.message = response.data+"Created Successfully";
+                console.log(response.data);
+
+        }, function (response) {
+            $scope.message = response.data;
+
+            console.log(response.data);
 
 
         }
-
+          
+ 
+   
 
         )
+
+   
+         
+      
     }
 
 
-
+   
 
 
 

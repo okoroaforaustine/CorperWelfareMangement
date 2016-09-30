@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-
+using CorpersWelfareManager.Models.Repository;
 namespace CorpersWelfareManager.Models.Repository
 {
-    public class CorperRepository:IDisposable
+    public class CorperRepository:IDisposable,IcorperInterface
     {
 
         WelfareManagerContext _context;
+        private IcorperInterface Rep;
         
      public CorperRepository()
             : this(new WelfareManagerContext())
@@ -22,8 +23,10 @@ namespace CorpersWelfareManager.Models.Repository
         {
 
             _context = context;
+            _context.Configuration.ProxyCreationEnabled = false;  
         }
 
+    
         public    IQueryable<Corper>GetAllCorper()
         {
 
@@ -109,7 +112,11 @@ namespace CorpersWelfareManager.Models.Repository
            
         }
 
-    
+
+
+
+
+
 
     
     }

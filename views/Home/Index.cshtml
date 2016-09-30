@@ -6,53 +6,139 @@
 
 
 
-<div class="header">
-    <div class="posterhead">
-
-        Corperwelfare
-    </div>
 
    
 
+  
 
 
 
+   
+    
 
     <div data-ng-controller="indexController">
-
-
-
-        <ul>
-
-
-
-
-
-
-
-            <li><a href="#/Index/Home">HOME</a></li>
-            <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
-            <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
-            <li data-ng-hide="authentication.isAuth"> <a href="#/Login">LOGIN</a></li>
-            <li data-ng-hide="authentication.isAuth"> <a href="#/Home/Register">REGISTER</a></li>
-        </ul>
-
-
-
+        
+        <div data-ng-hide="!authentication.isAuth">
+            <dash-board />
+        
         </div>
+        
+
+        <div data-ng-hide="authentication.isAuth">
+            <div class="container">
+                <div class="header row">
+                    <div class="logo span4">
+                        <h2><a href="">CorperWelfare</a></h2>
 
 
-    <div data-ng-controller="indexController">
-        <div class="col-md-5">
-            <div data-ng-hide="!authentication.isAuth">
-                <dash-board />
+                        </div>
+                    <div class="tel-skype span8">
+                        <p><i class="icon-phone-sign"></i> Phone: 08068158113 <span class="pipe">|</span> <i class="icon-user"></i> email: okoroaforaustine@gmail.com</p>
+                    </div>
+                </div>
             </div>
+
+
+            <!-- Product Showcase -->
+            <div class="product-showcase">
+                <div class="product-showcase-pattern">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12 product-background">
+                                <div class="row">
+                                    <div class="span5 product-image">
+                                        <img src="~/Content/assets/image/frontnysc.jpg" alt="">
+                                    </div>
+                                    <div class="span7 product-title">
+                                        <h1><strong>CorpersWelfareManager......</strong> Managing Corpers Affair and Funds in local government Area  </h1>
+                                        <div class="product-description">
+                                            <p>This Software<strong>"CorperWelfareManager"</strong> is a software</p>
+                                            <p>that Stores Accurate Information of all Corpers in Abuah Oduah local Government area Rivers State </p>
+                                            <p>Stores Monthly(N200) Payment of Welfare paid by Corpers and Allocate Financial Resources according to Percentage of paid Corpers Leaving in a Community</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <!-- features -->
+                        <div class="features_2">
+                            <h3>What's Inside</h3>
+                            <div class="row">
+                                <div class="span4 single-feature features-left-span">
+                                    <div class="feature-icon">
+                                        <i class="icon-cloud"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Records Corpers Information</h4>
+                                        <p>Enables Corpers Information to be Recorded in the Database</p>
+                                    </div>
+                                </div>
+                                <div class="span4 single-feature">
+                                    <div class="feature-icon">
+                                        <i class="icon-ok"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Records Welfare Payment</h4>
+                                        <p> Enables  Corper Welfare Monthly Payment to be Recorded in the Database</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="span4 single-feature single-feature-bottom">
+                                    <div class="feature-icon">
+                                        <i class="icon-flag"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Shares Allocation Resources By 60% to Communities</h4>
+                                        <p>Allocate Allocation to Corpers Community According to Percentage of Paid Corpers leaving in the Community</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+                <div class="row">
+                    <div class="span12">
+                        <!-- gallery -->
+                    </div>
+                </div> <!-- end row -->
+                <div class="row">
+                    <div class="span12">
+                        <!-- about us -->
+                    </div>
+                </div> <!-- end row -->
+                <!-- end row -->
+            </div> <!-- end container -->
+
+
+            <footer>
+                <div class="container">
+                <a href="#/Login">AdminLogin</a>
+                    <div class="row">
+                        <div class="span12 copyright">
+                            <p>Copyright &copy; 2016 - OkoroaforAustine
+                        </div>
+                    </div> <!-- end row -->
+                </div> <!-- end container -->
+            </footer>
         </div>
 
-    </div>
-    </div>
 
+
+    </div>
+   <ng-view></ng-view> 
+
+    
 
 
    
-<ng-view></ng-view>
+

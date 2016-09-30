@@ -27,7 +27,7 @@ namespace CorpersWelfareManager
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
            RouteConfig.RegisterRoutes(RouteTable.Routes);
-          
+           CorpersWelfareManager.App_Start.Bootstrapper.Configure();
 
           
         }

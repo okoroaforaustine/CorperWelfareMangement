@@ -1,92 +1,183 @@
 ﻿
 
 
+
 <div class="col-lg-offset-3">
     <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <i class="glyphicon glyphicon-wrench pull-right"></i>
-                    <h4>AddCorper</h4>
-                </div>
-            </div>
-            </div>
-            <div class="panel-body">
-            
-               
-
-            <form  class="form-horizontal">
-              
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">STATECODE </label>
-                    <input type="text" class="form-control" name="Statecode" placeholder="RV/1234/1564" data-ng-model="Corper.Statecode">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <i class="glyphicon glyphicon-wrench pull-right"></i>
+                        <h4>Create Corper</h4>
+                    </div>
                 </div>
 
+                <form name="registerform" novalidate  class="form-horizontal">
 
-                <div class="form-group">
+                    <div></div>
 
-                    <label class="col-sm-2 control-label">FIRSTNAME </label>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Statecode </label>
+                        <div ng-show="registerform.$submitted || registerform.Statecode.$touched || registerform.Statecode.$pristine">
+                            <div ng-show="registerform.Statecode.$error.required" class="help-block" style="color:red;"> Statecode is required</div>
 
-                    <input type="text" class="form-control" name="Firstname"placeholder="Okoroafor" data-ng-model="Corper.Firstname">
+                        </div>
+                        <input type="text" name="Statecode" placeholder="RV/1234/1564" data-ng-model="Corper.Statecode"  required="" />
 
-                </div>
+                        
+                      
+                    </div>
 
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">LASTNAME </label>
-                    <input type="text" class="form-control" name="Lastname" placeholder="Austine" data-ng-model="Corper.Lastname">
-                </div>
-                <div class="form-group">
 
-                    <label class="col-sm-2 control-label">Sex</label>
+                    <div class="form-group">
 
-                    <input type="text" class="form-control" name="Sex" placeholder="Male" data-ng-model="Corper.Sex">
+                        <label class="col-sm-2 control-label">Firstname </label>
+                        <div ng-show="registerform.$submitted || registerform.Firstname.$touched || registerform.Firstname.$pristine">
+                            <div ng-show="registerform.Firstname.$error.required" class="help-block" style="color:red;"> Firstname is required</div>
+                        </div>
+                        <input type="text" name="Firstname" placeholder="Okoroafor" data-ng-model="Corper.Firstname" required="">
+                       
+                        </div>
 
-                </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Lastname </label>
+                        <div ng-show="registerform.$submitted || registerform.Lastname.$touched || registerform.Lastname.$pristine">
+                            <div ng-show="registerform.Lastname.$error.required" class="help-block" style="color:red;"> Lastname is required</div>
+                        </div>
+                        <input type="text" name="Lastname" placeholder="Austine" data-ng-model="Corper.Lastname" required="">
+                      
+                        </div>
+                   
+                    <div class="form-group">
 
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">COMMUNITY </label>
-                    <select class="form-control" name="Community" ng-model="Corper.Community" ng-options="Community for Community in AbuahCommunity"></select>
-                </div>
+                        <label class="col-sm-2 control-label">Sex</label>
+                        <div ng-show="registerform.$submitted || registerform.Sex.$touched || registerform.Sex.$pristine">
+                            <div ng-show="registerform.Sex.$error.required" class="help-block" style="color:red;">Sex is required</div>
+
+                        </div>
+
+                    
+                        <select name="Sex" ng-model="Corper.Sex" required>
+                            <option value="">Select Sex</option>
+                            <option  value="">Male</option>
+                            <option value="">Female</option>
+
+
+                        </select>
+                         </div>
+
+
+                  
+
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Cds</label>
+
+                        <div ng-show="registerform.$submitted || registerform.Cds.$touched || registerform.Cds.$pristine">
+                            <div ng-show="registerform.Cds.$error.required" class="help-block" style="color:red;">Cds is required</div>
+                        </div>
+                       
+                        <select name="Cds" ng-model="Corper.CdsName" required="">
+                            <option ng-repeat="value in AllCds" value="{{value.CdsName}}">{{value.CdsName}}</option>
+                            <option value="">Select a Cds</option>
+
+                        </select>
+                        
+                        </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">NyscYear</label>
+                        <div ng-show="registerform.$submitted || registerform.NyscYear.$touched || registerform.NyscYear.$pristine">
+                            <div ng-show="registerform.NyscYear.$error.required" class="help-block" style="color:red;">Nyscyear is required</div>
+
+                        </div>
+                        <select name="NyscYear" ng-model="Corper.NyscYear" required="">
+                            
+                            <option ng-repeat="value in AllNyscYear" value="{{value.NyscYearName}}">{{value.NyscYearName}}</option>
+                            <option value="">Select a NyscYear</option>
+                        </select>
+                        
+                       
+                        </div>
+                        
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Batch</label>
+                        <div ng-show="registerform.$submitted || registerform.Batch.$touched || registerform.Batch.$pristine">
+                            <div ng-show="registerform.Batch.$error.required" class="help-block" style="color:red;">Batch is required</div>
+
+                        </div>
+                        <select name="Batch" ng-model="Corper.BatchName" required>
+                            
+
+                            <option ng-repeat="value in AllBatch" value="{{value.BatchName}}">{{value.BatchName}}</option>
+                            <option value="">Select a Batch</option>
+
+                        </select>
+                      
+                       
+                    </div>
+                    
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Community</label>
+                        <div ng-show="registerform.$submitted || registerform.Community.$touched|| registerform.Community.$pristine">
+                            <div ng-show="registerform.Community.$error.required" class="help-block" style="color:red;">Community is required</div>
+
+                       </div>
+                        <select name="Community" ng-model="Corper.Community" required>
+                            
+                            <option ng-repeat="value in AllCommunity" value="{{value.CommunityName}}">{{value.CommunityName}}</option>
+                            <option value="">Select Community</option>
+                        </select>
+                        
+                       
+                  
+
+                    </div>
 
                 
-                <div class="form-group">
+                    <div class="col-md-offset-3">
+                    
 
-                    <div class="col-sm-offset-2">
-
-                        <button class="btn btn-primary" type="submit" data-ng-click="SaveCorper()">Submit</button>
-
-                        <div class="form-group">
-
-                            <div class="col-sm-offset-2 col-sm-10">
-
-                                <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
-
-                                    {{message}}
-
-                                </div>
+                        <button class="btn btn-primary" type="submit" data-ng-click="SaveCorper(corper,registerform)">Submit</button>
+                        <button class="btn btn-primary" type="submit" ng-data-click="admin()">cancel</button>
+                        </div>
+                     
 
 
-                                {{error}}
+                        <div class="col-sm-offset-2 col-sm-10">
+
+                            <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+
+                                {{message}}
+
+                            </div>
+
+                        </div>
 
 
-            </form>
+
+</form>
+
+
+
+
+            </div>
+
+
 
 
 
 
         </div>
 
+    </div>
 
-
-
-
-
-        </div>
-
-        </div>
-    
-
+</div>
 
 
 

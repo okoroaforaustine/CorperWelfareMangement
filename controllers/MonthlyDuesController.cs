@@ -38,19 +38,30 @@ namespace CorpersWelfareManager.Controllers
       public IHttpActionResult Post(MonthlyDues Monthly)
        {
 
-           if(ModelState.IsValid)
-               if(Monthly.AmountMonthly>=200.00)
+           if (ModelState.IsValid)
+           {
+               if (Monthly.AmountMonthly >= 200.00)
                {
 
-                 _Repo.PostMonthly(Monthly);
+                   _Repo.PostMonthly(Monthly);
                    _Repo.SaveMonthly();
 
                    return Ok(Monthly);
 
                }
-                
+               else
+               {
+                   return BadRequest("Amount is below N200");
 
-            return BadRequest();
+               }
+              
+
+           }
+           else
+           {
+               return BadRequest("failed to Post PayMent");
+           }
+            
                
         
           

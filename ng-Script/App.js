@@ -61,7 +61,8 @@ var App = angular.module("App", ['ngRoute', 'LocalStorageModule', 'ngResource', 
     });
     $routeProvider.when('/Admin', {
 
-        templateUrl: '/ng-View/Home/AdminDashBoard.html'
+        templateUrl: '/ng-View/Home/AdminDashBoard.html',
+      
         
 
 
@@ -97,7 +98,77 @@ var App = angular.module("App", ['ngRoute', 'LocalStorageModule', 'ngResource', 
 
     });
 
+    $routeProvider.when('/Batch', {
 
+        templateUrl: '/ng-View/Batch/Batch.html',
+        controller: 'BatchController'
+
+
+
+    });
+
+
+    $routeProvider.when('/Cds', {
+
+        templateUrl: '/ng-View/Cds/Cds.html',
+        controller: 'cdsController'
+
+
+
+    });
+
+    $routeProvider.when('/NyscYear', {
+
+        templateUrl: '/ng-View/NyscYear/Nyscyear.html',
+        controller: 'NyscYearController'
+
+
+
+    });
+
+
+    $routeProvider.when('/Community', {
+
+        templateUrl: '/ng-View/Community/Community.html',
+        controller: 'CommunityController'
+
+
+
+    });
+
+    $routeProvider.when('/view/Community', {
+
+        templateUrl: '/ng-View/Community/viewCommunity.html',
+        controller: 'CommunityController'
+
+
+
+    });
+
+    $routeProvider.when('/view/Batch', {
+
+        templateUrl: '/ng-View/Batch/viewBatch.html',
+        controller: 'BatchController'
+
+
+
+    });
+    $routeProvider.when('/view/Cds', {
+
+        templateUrl: '/ng-View/Cds/viewCds.html',
+        controller: 'cdsController'
+
+
+
+    });
+    $routeProvider.when('/view/NyscYear', {
+
+        templateUrl: '/ng-View/NyscYear/viewNyscYear.html',
+        controller: 'NyscYearController'
+
+
+
+    });
 
 
 

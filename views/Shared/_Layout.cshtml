@@ -1,75 +1,152 @@
 ﻿<!DOCTYPE html>
-''" "
 <html ng-app="App">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title -CorperWelfare</title>
     <link href="~/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/bower_components/bootstrap/dist/css/scrolling-nav.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Corper.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/styles.css" rel="stylesheet" type="text/css" />
+    <link href="~/bower_components/bootstrap/dist/css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+    <link rel=" stylesheet" href="~/Content/assets/bootstrap/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="~/Content/assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="~/Content/assets/css/social-icons.css">
+    <link rel="stylesheet" href="~/Content/assets/css/ebook-style.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicon and touch icons -->
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/Content/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="stylesheet" href="~/Content/assets/prettyPhoto/css/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/assets/font-awesome/css/font-awesome.css">
+    
+  
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="Content/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/Content/assets/ico/apple-touch-icon-57-precomposed.png">
+
+
+
     <link href='https://fonts.googleapis.com/css?family=Montserrat|Alegreya+Sans|Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
-    <link href="~/bower_components/bootstrap/dist/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="~/view/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/view/bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
+    
+  
+    <link href="~/view/dist/css/timeline.css" rel="stylesheet">
+    
+    <link href="~/view/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <link href="~/view/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   
+
 
 </head>
 <body>
-    
+
 
     @RenderBody()
-   
-        <script src="~/bower_components/angular/angular.js"></script>
-        <script src="~/bower_components/angular-resource/angular-resource.js"></script>
-        <script src="~/bower_components/angular-route/angular-route.js"> </script>
+
+    <script src="~/bower_components/angular/angular.js"></script>
+
+    <script src="~/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="~/bower_components/angular-route/angular-route.js"> </script>
+    
     <script src="~/bower_components/angular-validation/dist/angular-validation.js"></script>
     <script src="~/bower_components/angular-validation/dist/angular-validation-rule.js"></script>
-
-
-        <script src="~/bower_components/angular-mocks/angular-mocks.js"></script>
-        <script src="~/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
-        <script src="~/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-        <script src="~/bower_components/angular-animate/angular-animate.js"></script>
-        <script src="~/bower_components/angular-touch/angular-touch.js"></script>
-        <script src="~/bower_components/jquery/dist/jquery.js"></script>
-        <script src="~/bower_components/bootstrap/dist/css/bootstrap.js"></script>
-  
-
-        <script src="~/ng-Script/App.js"></script>
+    <script src="~/view/bower_components/jquery/dist/jquery.min.js"></script>
    
-        <script src="~/ng-Script/Controller/Account/LoginController.js"></script>
-        <script src="~/ng-Script/Services/Account/AuthService.js"></script>
-        <script src="~/ng-Script/Services/Account/authInterceptorService.js"></script>
+   
+    <script src="~/view/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="~/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="~/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="~/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="~/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="~/bower_components/jquery/dist/jquery.js"></script>
+    <script src="~/bower_components/bootstrap/dist/css/bootstrap.js"></script>
+    <script src="~/bower_components/bootstrap/dist/css/scrolling-nav.js"></script>
+
+    <script src="~/ng-Script/App.js"></script>
+
+    <script src="~/ng-Script/Controller/Account/LoginController.js"></script>
+    <script src="~/ng-Script/Services/Account/AuthService.js"></script>
+    <script src="~/ng-Script/Services/Account/authInterceptorService.js"></script>
     <script src="~/ng-Script/Services/Corper/AllCorpersHttp.js"></script>
     <script src="~/ng-Script/Services/Corper/AllCorpersService.js"></script>
     <script src="~/ng-Script/Directive/CorperPager.js"></script>
     <script src="~/ng-Script/Directive/DashBoard.js"></script>
-    
-        <script src="~/ng-Script/Controller/Account/RegisterController.js"></script>
-        <script src="~/ng-Script/Controller/Home/HomeController.js"></script>
-        <script src="~/ng-Script/Controller/Home/indexController.js"></script>
-        <script src="~/ng-Script/Controller/CollapseDemoCtrl.js"></script>
-        <script src="~/ng-Script/Controller/EditCorpersController.js"></script>
+
+    <script src="~/ng-Script/Controller/Account/RegisterController.js"></script>
+    <script src="~/ng-Script/Controller/Home/HomeController.js"></script>
+    <script src="~/ng-Script/Controller/Home/indexController.js"></script>
+  
+   
     <script src="~/ng-Script/Services/MonthlyDues/MonthlyDues.js"></script>
     <script src="~/ng-Script/Services/MonthlyDues/PostMonthlyDues.js"></script>
     <script src="~/ng-Script/Services/MonthlyDues/TotalMonthly.js"></script>
     <script src="~/ng-Script/Controller/MonthlyDues/PostDuesController.js"></script>
     <script src="~/ng-Script/Controller/MonthlyDues/TotalSum.js"></script>
 
+    
+    
+   
+
+    <script src="~/ng-Script/Services/Create/Batch.js"></script>
+    <script src="~/ng-Script/Services/Create/Community.js"></script>
+    <script src="~/ng-Script/Services/Create/NyscYear.js"></script>
+    <script src="~/ng-Script/Services/Create/Cds.js"></script>
+    <script src="~/ng-Script/Controller/Create/Cds.js"></script>
+    <script src="~/ng-Script/Controller/Create/Batch.js"></script>
+    <script src="~/ng-Script/Controller/Create/Community.js"></script>
+    <script src="~/ng-Script/Controller/Create/NyscYear.js"></script>
+
     <script src="~/ng-Script/Controller/MonthlyDues/TotalSum.js"></script>
     <script src="~/ng-Script/Controller/Corper/AddCorper.js"></script>
     <script src="~/ng-Script/Controller/Corper/AllCorpers.js"></script>
     <script src="~/ng-Script/Services/Corper/AddCorper.js"></script>
-        <script src="~/bower_components/jquery/dist/jquery.js"></script>
+    
 
-
-
+    <script src="~/view/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="~/view/dist/js/sb-admin-2.js"></script>
 
    
+    <!-- Javascript -->
    
 
+    <script src="~/Content/assets/js/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/assets/js/ebook-scripts.js"></script>
+    <script src="~/Content/assets/js/jquery.backstretch.min.js"></script>
+    
+
+    <script src="~/view/bower_components/raphael/raphael-min.js"></script>
+    <!-- Custom Theme JavaScript -->
+ 
 
 
-  
+
+
 </body>
 
 </html>
